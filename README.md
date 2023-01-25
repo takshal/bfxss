@@ -13,4 +13,4 @@ so you need xss hunter paylod or account.
 
 <h5>how to install?</h5>
 
-``` go install https://github.com/takshal/kal-xss.git@latest ```
+``` go install https://github.com/takshal/kal-xss@latest ```
