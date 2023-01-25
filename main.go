@@ -67,9 +67,9 @@ func agentBxss(payload string ){
 	client:=&http.Client{}
 	for scanner.Scan(){
 		link:=scanner.Text()
-		fmt.Println(InfoColor + "[+] Testing url:" + link + "For Blind XSS")
-		fmt.Println(NoticeColor + "[+] Testing field:" + header )
-		fmt.Println(TextColor + "[+] Testing payload:" + payload )
+		fmt.Println(InfoColor ,"[+] Testing url:" , link , "For Blind XSS")
+		fmt.Println(NoticeColor , "[+] Testing field:" , header )
+		fmt.Println(TextColor , "[+] Testing payload:" , payload )
 		req,err:=http.NewRequest("GET", link, nil)
 		if err !=nil{
 		return
@@ -87,9 +87,9 @@ func refBxss(payload string ){
 	client:=&http.Client{}
 	for scanner.Scan(){
 		link:=scanner.Text()
-		fmt.Println(InfoColor +"[+] Testing url:" + link + "For Blind XSS")
-		fmt.Println(NoticeColor + "[+] Testing field:" + header )
-		fmt.Println(TextColor +"[+] Testing payload:" + payload )
+		fmt.Println(InfoColor , "[+] Testing url:" , link , "For Blind XSS")
+		fmt.Println(NoticeColor , "[+] Testing field:" , header )
+		fmt.Println(TextColor , "[+] Testing payload:" , payload )
 		req,err:=http.NewRequest("GET", link, nil)
 		if err !=nil{
 		return
