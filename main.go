@@ -28,6 +28,21 @@ func main () {
 	flag.StringVar(&p, "p", "", "The Blind XSS Payload")
 	
 	flag.Parse()
+	fmt.Printf(BannerColor,`
+
+	==================================================
+	=      ====        ==   ==   ===      ====      ==
+	=  ===  ===  =========  ==  ===  ====  ==  ====  =
+	=  ====  ==  =========  ==  ===  ====  ==  ====  =
+	=  ===  ===  ==========    =====  ========  ======
+	=      ====      =======  ========  ========  ====
+	=  ===  ===  ==========    =========  ========  ==
+	=  ====  ==  =========  ==  ===  ====  ==  ====  =
+	=  ===  ===  =========  ==  ===  ====  ==  ====  =
+	=      ====  ========  ====  ===      ====      ==
+	==================================================
+                    
+	`, "-- Coded by @tojojo -- \n")
 	if p == ""{
 		fmt.Println("Some Argument are not set")
 		return
@@ -38,7 +53,6 @@ func main () {
 			go func () {
 				agentBxss(p)
 				refBxss(p)
-				hosBxss(p)
 				wg.Done()
 			}()
 			wg.Wait()
@@ -85,26 +99,4 @@ func refBxss(payload string ){
 	}
 }
 	
-func hosBxss(payload string ){
-	header:= "Host"
-	time.Sleep(500 * time.Millisecond)
-	scanner:=bufio.NewScanner(os.Stdin)
-	client:=&http.Client{}
-	for scanner.Scan(){
-		link:=scanner.Text()
-		fmt.Println(InfoColor +"[+] Testing url:" + link + "For Blind XSS")
-		fmt.Println(NoticeColor + "[+] Testing field:" + header )
-		fmt.Println(TextColor +"[+] Testing payload:" + payload )
-		req,err:=http.NewRequest("GET", link, nil)
-		if err !=nil{
-		return
-		}
-		req.Header.Add(header, payload)
-		client.Do(req)
-		 
 
-    }
-
-
-	
-}
