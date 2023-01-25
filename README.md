@@ -9,8 +9,8 @@ so you need xss hunter paylod or account.
 
 <h5>how to use?</h5>
 
-``` assetfinder --subs-only example.com | httprobe | kal-xss -p "your xsshunter payload" ```
+``` assetfinder --subs-only example.com | httprobe | bfxss -p "your xsshunter payload" ```
 
 <h5>how to install?</h5>
 
-``` go install github.com/takshal/kal-xss@latest ```
+``` go install github.com/takshal/bfxss@latest ```
