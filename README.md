@@ -7,8 +7,10 @@ description: i belive you can find blind cross site scripting vlnerablity in use
 what require?
 so you need xss hunter paylod or account.
 
-how to use?
+<h5>how to use?</h5>
 
 ``` assetfinder --subs-only example.com | httprobe | kal-xss -p "your xsshunter payload" ```
 
-how to install?
+<h5>how to install?</h5>
+
+go install https://github.com/takshal/kal-xss.git@latest
