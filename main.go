@@ -15,8 +15,8 @@ const (
 	TextColor = "\033[1;0m%s\033[1;32m%s\n\033[0m"
         InfoColor    = "\033[1;0m%s\033[1;35m%s\033[0m"
         NoticeColor  = "\033[1;0m%s\033[1;34m%s\n\033[0m"
-        
-       
+
+
 )
 
 func main () {
